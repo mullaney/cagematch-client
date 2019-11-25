@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>CageMatch</h1>
+    <h1>Records</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home"
+  name: "records"
 };
 </script>

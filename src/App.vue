@@ -2,7 +2,14 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/rankings">Rankings</router-link> |
+      <router-link to="/scores">Scores</router-link> |
+      <router-link to="/rules">Rules</router-link> |
+      <router-link to="/records">Records</router-link> |
+      <router-link to="/archives">Archives</router-link> |
+      <a href="https://www.ucbtheatre.com/show/25" rel="noopener" target="_blank">
+        Tickets
+      </a>
     </div>
     <router-view />
   </div>
