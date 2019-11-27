@@ -7,6 +7,6 @@ describe("Home.vue", () => {
     const wrapper = shallowMount(Home);
     const h1 = wrapper.find("h1");
     expect(h1.isVisible()).to.eq(true);
-    expect(h1.text()).to.include("CageMatch");
+    expect(h1.text()).to.include("Cage Match");
   });
 });
