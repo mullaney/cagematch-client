@@ -7,7 +7,11 @@
       <router-link to="/rules">Rules</router-link> |
       <router-link to="/records">Records</router-link> |
       <router-link to="/archives">Archives</router-link> |
-      <a href="https://www.ucbtheatre.com/show/25" rel="noopener" target="_blank">
+      <a
+        href="https://www.ucbtheatre.com/show/25"
+        rel="noopener"
+        target="_blank"
+      >
         Tickets
       </a>
     </div>
