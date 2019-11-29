@@ -1,21 +1,36 @@
 <template>
   <div>
-    <h1>Cage Match NYC</h1>
-    <div>
-      <p>
-        Welcome to the world's most dangerous Improv show, where two mighty
-        teams of gladiators will take the stage to prove who is the best of the
-        best. This is not an exhibition. This is a no-holds-barred competition.
-        The audience determines the winner each week via secret ballot. The
-        winner returns the following week to defend their title against a new
-        challenger.
-      </p>
+    <div v-if="loading">Loading</div>
+    <div v-else>
+      <h1>{{ title }}</h1>
+      <div>
+        <p>
+          {{ description }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  name: "home"
+  name: "home",
+  computed: {
+    ...mapGetters(["cagematch"]),
+    title() {
+      return this.cagematch.title;
+    },
+    description() {
+      return this.cagematch.description;
+    },
+    id() {
+      return this.cagematch.id;
+    },
+    loading() {
+      return this.cagematch.loading;
+    }
+  }
 };
 </script>

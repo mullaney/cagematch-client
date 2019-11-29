@@ -19,6 +19,19 @@
   </div>
 </template>
 
+<script>
+import { mapActions } from "vuex";
+
+export default {
+  methods: {
+    ...mapActions(["fetchCagematch"])
+  },
+  created() {
+    this.fetchCagematch();
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

@@ -3,22 +3,19 @@ import { expect } from "chai";
 
 describe("cagematchStore", () => {
   describe("state", () => {
-    const { cagematch, loading } = cagematchStore.state;
+    const { cagematch } = cagematchStore.state;
 
     it("contains a cagematch object", () => {
       expect(cagematch).to.be.an.instanceof(Object);
       expect(typeof cagematch.id).to.eq("number");
       expect(typeof cagematch.title).to.eq("string");
       expect(typeof cagematch.description).to.eq("string");
-    });
-
-    it("contains a flag for loadng status", () => {
-      expect(loading).to.eq(false);
+      expect(cagematch.loading).to.eq(false);
     });
   });
 
   describe("getters", () => {
-    describe("cageMatch()", () => {
+    describe("cagematch()", () => {
       it("is a method", () => {
         expect(cagematchStore.getters.cagematch).to.be.an.instanceof(Function);
       });
@@ -34,21 +31,6 @@ describe("cagematchStore", () => {
 
         const cagematch = cagematchStore.getters.cagematch(state);
         expect(cagematch).to.eq(state.cagematch);
-      });
-    });
-
-    describe("loading()", () => {
-      it("is a method", () => {
-        expect(cagematchStore.getters.loading).to.be.an.instanceof(Function);
-      });
-
-      it("returns the loading status", () => {
-        const state = {
-          loading: false
-        };
-
-        const loading = cagematchStore.getters.loading(state);
-        expect(loading).to.eq(state.loading);
       });
     });
   });
