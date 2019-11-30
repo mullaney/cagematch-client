@@ -4,7 +4,7 @@
 describe("Basic navigation", () => {
   it("Visits the app root url, and tests navigation", () => {
     cy.visit("/");
-    cy.contains("h1", "CageMatch");
+    cy.contains("h1", "Cage");
     cy.get('a[href*="rankings"]').click();
     cy.contains("h1", "Rankings");
     cy.get('a[href*="scores"]').click();

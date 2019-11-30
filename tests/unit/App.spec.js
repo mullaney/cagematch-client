@@ -1,13 +1,25 @@
+import Vuex from "vuex";
 import { expect } from "chai";
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, createLocalVue } from "@vue/test-utils";
 import App from "@/App.vue";
-import Vue from "vue";
 import VueRouter from "vue-router";
-Vue.use(VueRouter);
+
+const localVue = createLocalVue();
+localVue.use(Vuex);
+localVue.use(VueRouter);
+
+const store = new Vuex.Store({
+  actions: {
+    fetchCagematch() {}
+  }
+});
 
 describe("App.vue", () => {
   it("renders all navigation links", () => {
-    const wrapper = shallowMount(App);
+    const wrapper = shallowMount(App, {
+      store,
+      localVue
+    });
     expect(wrapper.text()).to.include("Home");
     expect(wrapper.text()).to.include("Rankings");
     expect(wrapper.text()).to.include("Scores");
